@@ -1,6 +1,6 @@
 <template>
     <section class="memory-game">
-      <div
+      <!-- <div
         class="memory-card"
         v-for="(card, index) in list_cards"
         :key="index"
@@ -19,12 +19,23 @@
           :src="card.imageBackFace"
           alt="JS Badge"
         />
-      </div>
+      </div> -->
+      <appCard class="memory-card"
+        v-for="(card, index) in list_cards"
+        :key="index" 
+        :card = "card"
+        :index = "index"
+        @cardIsClicked = cardIsClicked($event)
+        />
     </section>
 </template>
 <script>
+import appCard from './app-card.vue'
 export default {
     name: 'appGameSection',
+    components: {
+        appCard
+    },
     props: {
         list_cards: Array,
 

@@ -164,7 +164,7 @@ export default {
       });
     },
     startCounter() {
-      this.counter = 5;
+      this.counter = 60;
       interval = setInterval(() => {
         this.counter -= 1;
       }, 1000);
